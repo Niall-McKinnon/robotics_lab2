@@ -13,9 +13,6 @@ if __name__ == '__main__':
 	# format output:
 	np.set_printoptions(precision = 2, suppress = True)
 	
-	# Define 3D vector (using example from class):
-	v0 = rbm.vec(0, 1, 1)
-	
 	# Define rotation about x-axis:
 	Rx = rbm.rot_x(psi)
 	
@@ -26,13 +23,12 @@ if __name__ == '__main__':
 	Rz = rbm.rot_z(phi)
 	
 	# Rotate about fixed frame:
-	# Multiply x and y first, then z
-	R = np.matmul((np.matmul(Rx, Ry)), Rz)
+	R = np.matmul(Rz, (np.matmul(Rx, Ry)) )
 	
 	# Calculate results with dot product:
-	result = R.dot(v0)
-	
-	print('The results are:\n', result)
+	# result = R.dot(v0)
+	print('===== Problem 1: =====')
+	print('The results are:\n', R)
 	
 	
 	

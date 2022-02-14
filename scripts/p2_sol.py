@@ -43,8 +43,3 @@ def rot_z(gamma):
 					[0, 0, 1, 0],
 					[0, 0, 0, 1]])
 	return rot
-
-def vec(x,y,z,d):
-#	Define a vector as an numpy and transpose it to a column vector.
-	vec = np.array([[x, y, z, d]]).T 
-	return vec
